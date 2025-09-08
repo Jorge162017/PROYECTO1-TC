@@ -1,3 +1,41 @@
+"""
+====================================================
+ Conversión de Expresión Regular: Infix ➝ Postfix
+----------------------------------------------------
+ Este módulo transforma una expresión regular escrita en 
+ notación infija (con paréntesis y operadores) a notación 
+ postfija (forma utilizada para construir el AFN).
+
+ Características:
+ - Define la precedencia de operadores:
+     • '+' → Unión (prioridad 1).
+     • '.' → Concatenación (prioridad 2).
+     • '*' → Cerradura de Kleene (prioridad 3).
+ - Reconoce operandos como caracteres alfanuméricos o '_' (símbolo que representa épsilon).
+ - Inserta operadores de concatenación '.' de forma explícita
+   donde es necesario.
+
+ Funciones principales:
+ - is_operator(c: str):
+     Determina si un carácter es un operador válido.
+ - is_operand(c: str):
+     Verifica si un carácter es un operando.
+ - insert_concatenation_operators(infix: str):
+     Inserta los puntos de concatenación en la expresión infija.
+ - toPostFix(infixExpression: str):
+     Convierte una expresión regular infija a su forma postfija 
+     aplicando el algoritmo de la pila (Shunting Yard).
+
+ Ejemplo:
+   Entrada (infijo):   (0+1)*11(0+1)*
+   Salida (postfijo):  01+*1.1.01+*.
+
+ En resumen:
+   Regex (infijo) ➝ Regex (postfijo) lista para construir el AFN.
+====================================================
+"""
+
+
 # Prioridades de los operadores (más alto número, mayor prioridad)
 precedence = {'+': 1, '.': 2, '*': 3} #estrella de kleene
 

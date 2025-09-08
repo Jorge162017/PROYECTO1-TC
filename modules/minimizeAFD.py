@@ -1,4 +1,33 @@
-# minimizeAFD.py
+"""
+====================================================
+ Minimización de AFD
+----------------------------------------------------
+ Este módulo toma un autómata finito determinista (AFD) y 
+ aplica un proceso de minimización para reducir el número 
+ de estados sin alterar el lenguaje que reconoce.
+
+ Proceso:
+ - Se dividen los estados en dos conjuntos iniciales:
+   • Estados de aceptación.
+   • Estados no aceptados.
+ - Se agrupan estados con transiciones equivalentes y 
+   misma condición de aceptación.
+ - Cada grupo se representa como un único estado 
+   (representante del grupo).
+ - Se reconstruyen las transiciones y los estados de 
+   aceptación en base a los grupos minimizados.
+
+ Función principal:
+ - minimize_afd(afd):
+     Retorna un nuevo AFD con:
+       • transitions: transiciones entre los estados minimizados.
+       • accepted: lista de estados aceptados minimizados.
+
+ En resumen:
+   AFD (completo, posiblemente redundante) ➝ AFD mínimo.
+====================================================
+"""
+
 
 def minimize_afd(afd):
     # Separar los estados de aceptación y los no aceptados

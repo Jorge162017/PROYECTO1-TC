@@ -1,0 +1,20 @@
+// AFN
+digraph {
+	0 -> 1 [label=_]
+	0 -> 2 [label=_]
+	1 -> 8 [label=_]
+	2 -> 4 [label=_]
+	2 -> 6 [label=_]
+	3 -> 1 [label=_]
+	3 -> 2 [label=_]
+	4 -> 5 [label=a]
+	5 -> 3 [label=_]
+	6 -> 7 [label=b]
+	7 -> 3 [label=_]
+	8 -> 9 [label=a]
+	9 -> 10 [label=_]
+	10 -> 11 [label=b]
+	11 -> 12 [label=_]
+	12 -> 13 [label=b]
+	13 [shape=doublecircle]
+}

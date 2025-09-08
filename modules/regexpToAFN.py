@@ -1,3 +1,44 @@
+"""
+====================================================
+ Construcción de AFN (Glushkov)
+----------------------------------------------------
+ Este módulo convierte una expresión regular en notación 
+ postfija en un Autómata Finito No Determinista (AFN),
+ aplicando el algoritmo de construcción de Glushkov 
+ (también conocido como construcción de posiciones).
+
+ Características:
+ - No utiliza transiciones ε explícitas como Thompson, 
+   sino que construye los estados basados en las posiciones
+   de los símbolos dentro de la expresión regular.
+ - Cada símbolo terminal genera un estado único.
+ - Los operadores conectan los sub-autómatas:
+     • '.' → Concatenación
+     • '+' → Unión (OR lógico)
+     • '*' → Cerradura de Kleene (0 o más repeticiones)
+
+ Funciones principales:
+ - toAFN(postfix: str):
+     Construye un AFN a partir de la expresión regular 
+     en notación postfija.
+ - initializeOrAppend(dictionary, key, append):
+     Inicializa o agrega transiciones en el AFN.
+ - displaceTransitions(afn, delta: int):
+     Ajusta índices de estados para unir sub-AFN sin colisiones.
+ - newAFN(transitions, accepted):
+     Crea un nuevo AFN a partir de transiciones y estado final.
+
+ Ejemplo:
+   Expresión: "a*b._+"
+   Resultado: AFN representado como diccionario con transiciones 
+              y estado(s) de aceptación.
+
+ En resumen:
+   RegEx (postfijo) ➝ AFN (no determinista) con construcción de Glushkov.
+====================================================
+"""
+
+
 type AFNTransitions = list[dict[str, list[AFNState]]]
 type AFNState = int
 

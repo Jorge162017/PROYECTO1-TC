@@ -1,3 +1,28 @@
+"""
+====================================================
+ Simulación de Expresiones Regulares
+----------------------------------------------------
+ Módulo principal que:
+ 1. Convierte una regex infija a postfija.
+ 2. Construye el AFN (Glushkov).
+ 3. Transforma a AFD y lo minimiza.
+ 4. Genera gráficas (Graphviz) y exporta a JSON.
+ 5. Simula la cadena de prueba sobre el AFD minimizado.
+
+ Entrada:
+   • Expresión regular en notación infija.
+   • Cadena de prueba.
+
+ Salida:
+   • Archivos .png y .json del AFN, AFD y AFD minimizado.
+   • Resultado de aceptación/rechazo de la cadena.
+
+ En resumen:
+   Regex infijo ➝ Postfijo ➝ AFN ➝ AFD ➝ AFD mínimo ➝ Simulación.
+====================================================
+"""
+
+
 import os
 import time
 import json

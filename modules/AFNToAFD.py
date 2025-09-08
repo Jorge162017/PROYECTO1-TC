@@ -1,3 +1,32 @@
+"""
+====================================================
+ Conversión de AFN a AFD
+----------------------------------------------------
+ Este módulo convierte un autómata finito no determinista (AFN),
+ generado a partir de una expresión regular, en un autómata finito 
+ determinista (AFD) mediante el algoritmo de construcción de subconjuntos.
+
+ Funciones principales:
+ - findClosure(afn, stateIdx, alreadyEvaluated): 
+     Calcula el cierre-ε de un estado, devolviendo los estados alcanzables
+     y las entradas válidas desde él.
+ - travelAFN(afn, closure, inputs, stateTransitions):
+     Explora las transiciones desde un conjunto de estados del AFN y construye 
+     las transiciones del AFD.
+ - fromAFNToAFD(afn):
+     Orquesta la conversión completa de AFN a AFD, definiendo transiciones y 
+     estados de aceptación.
+ - newAFD(transitions, accepted):
+     Construye y devuelve el AFD en forma de diccionario.
+
+ Notación:
+   "_" = transición ε (épsilon)
+
+ En resumen:
+   AFN (no determinista, con ε) ➝ AFD (determinista).
+====================================================
+"""
+
 from regexpToAFN import toAFN
 from pprint import pp
 

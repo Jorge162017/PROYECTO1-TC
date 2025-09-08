@@ -1,3 +1,20 @@
+"""
+====================================================
+ Pruebas Unitarias
+----------------------------------------------------
+ Este archivo contiene tests para los módulos:
+  • Shunting Yard (infix ➝ postfix)
+  • Regex ➝ AFN (Glushkov)
+  • AFN ➝ AFD
+  • Minimización de AFD
+
+ Verifica casos básicos y ejemplos de clase para 
+ garantizar la correcta construcción y transformación 
+ de autómatas.
+====================================================
+"""
+
+
 import unittest
 from minimizeAFD import minimize_afd
 from shunYard import toPostFix
