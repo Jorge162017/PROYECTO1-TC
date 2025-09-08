@@ -107,4 +107,4 @@ Jorge Luis Lopez 221038
 
 Proyecto desarrollado como parte del curso de **Teoría de la Computación**.
 
-**Universidad del Valle de Guatemala – 2024.**
+**Universidad del Valle de Guatemala – 2025.**
